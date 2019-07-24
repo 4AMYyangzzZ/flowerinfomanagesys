@@ -8,6 +8,8 @@
         <result property="name" column="name"></result>
         <result property="price" column="price"></result>
         <result property="productionId" column="productionid"></result>
+        <result property="flowerImage" column="flowerImage"></result>
+        <result property="realName" column="realName"></result>
         <association property="production" javaType="Production">
             <id property="id" column="pid"></id>
             <result property="name" column="pname"></result>
@@ -18,7 +20,7 @@
     </select>
 
     <insert id="save" parameterType="com.bjsxt.pojo.Flower">
-        insert into Flower VALUES (NULL ,#{name},#{price},#{productionId});
+        insert into Flower VALUES (NULL ,#{name},#{price},#{productionId},#{flowerImage},#{realName});
     </insert>
     <resultMap id="findByConMap" type="Flower">
         <id property="id" column="id"></id>
@@ -42,4 +44,20 @@
         </where>
     </select>
 
+    <select id="findImageById" resultMap="findImageById">
+        select f.*,p.id pid,p.name pname from Flower f ,production p WHERE productionid=p.id and f.id=#{id};
+    </select>
+
+    <resultMap id="findImageById" type="Flower">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <result property="price" column="price"></result>
+        <result property="productionId" column="productionid"></result>
+        <result property="flowerImage" column="flowerImage"></result>
+        <result property="realName" column="realName"></result>
+        <association property="production" javaType="Production">
+            <id property="id" column="pid"></id>
+            <result property="name" column="pname"></result>
+        </association>
+    </resultMap>
 </mapper>

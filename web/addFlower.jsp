@@ -52,7 +52,7 @@
         原产地:<select name="production" id="production">
                     <option value=""></option>
                 </select><br>
-        花卉图片:<input type="file" name="file">
+        花卉图片:<input type="file" name="flower">
         &nbsp; &nbsp; &nbsp;<input type="submit" value="添加"> &nbsp;<input type="reset" value="重置">
     </form>
 </div>

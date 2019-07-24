@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -51,4 +53,5 @@ public class TestFlower {
         System.out.println(all);
         sqlSession.commit();
     }
+
 }

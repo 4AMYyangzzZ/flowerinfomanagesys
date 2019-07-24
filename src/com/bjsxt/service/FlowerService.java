@@ -9,4 +9,6 @@ public interface FlowerService {
     public boolean addFlower(Flower flower);
 
     public List<Flower> findByCon(String name, int production);
+
+    List<Flower> findImageById(int id);
 }

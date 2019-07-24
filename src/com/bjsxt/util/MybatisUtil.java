@@ -11,7 +11,7 @@ public class MybatisUtil {
     private static SqlSession sqlSession;
     public static SqlSession getSqlSeesion(){
         try {
-            InputStream is = Resources.getResourceAsStream("mybatis-config");
+           InputStream is = Resources.getResourceAsStream("mybatis-config");
             if (sqlSession==null){
                 sqlSession = new SqlSessionFactoryBuilder().build(is).openSession();
             }

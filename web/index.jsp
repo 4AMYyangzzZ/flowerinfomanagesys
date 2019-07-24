@@ -19,7 +19,7 @@
               url:"servlet/FlowerServlet?method=findAll",
               dataType:"text",
               success:function (result) {
-                 // alert(result);
+                  alert(result);
                   $("#display").empty();
                   eval("var arr="+result);
                   for(var i=0;i<arr.length;i++){
@@ -28,6 +28,8 @@
                           "          <td>"+arr[i].name+"</td>\n" +
                           "          <td>"+arr[i].price+"</td>\n" +
                           "          <td>"+arr[i].production.name+"</td>\n" +
+                          "          <td>"+"<img src=servlet/FlowerServlet?method=findImageById&id="+arr[i].id+">"+"</td>\n" +
+                          "          <td>"+"<a href=servlet/FlowerServlet?method=download&id="+arr[i].id+">"+"下载"+"</a>"+"</td>\n" +
                           "        </tr>");
                   }
               },
@@ -82,6 +84,8 @@
                           "          <td>"+arr[i].name+"</td>\n" +
                           "          <td>"+arr[i].price+"</td>\n" +
                           "          <td>"+arr[i].production.name+"</td>\n" +
+                          "          <td>"+"<img src=servlet/FlowerServlet?method=findImageById&id="+arr[i].id+">"+"</td>\n" +
+                          "          <td>"+"<a href=servlet/FlowerServlet?method=download&id="+arr[i].id+">"+"下载"+"</a>"+"</td>\n" +
                           "        </tr>");
                   }
               },
@@ -93,7 +97,7 @@
     </script>
   </head>
   <body>
-  <div style="width: 40%;margin: 0 auto">
+  <div style="width: 60%;margin: 0 auto">
     花卉名称:<input type="text" name="name" id="name">
     原产地:<select name="production" id="production">
             </select>
@@ -101,13 +105,15 @@
   </div>
 
   <hr>
-  <div style="width: 30%;margin: 0 auto">
-    <table cellspacing="0px" cellpadding="0px" border="1px" width="70%">
+  <div style="width: 90%;margin: 0 auto">
+    <table cellspacing="0px" cellpadding="0px" border="1px" width="100%">
       <thead>
         <th>花卉编号</th>
         <th>花卉名称</th>
         <th>价格(元)</th>
         <th>原产地</th>
+        <th>花卉图片</th>
+      <th>操作</th>
       </thead>
       <tbody id="display">
 

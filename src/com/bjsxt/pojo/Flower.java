@@ -6,6 +6,10 @@ public class Flower {
     private float price;
     private int productionId;
     private Production production;
+    private String flowerImage;
+    private String realName;
+
+
 
     public Flower() {
     }
@@ -23,12 +27,43 @@ public class Flower {
         this.production = production;
     }
 
+    public Flower(String name, float price, int productionId, String flowerImage, String realName) {
+        this.name = name;
+        this.price = price;
+        this.productionId = productionId;
+        this.flowerImage = flowerImage;
+        this.realName = realName;
+    }
+
     public Flower(int id, String name, float price, int productionId, Production production) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.productionId = productionId;
         this.production = production;
+    }
+
+    public Flower(String name, float price, int productionId, String flowerImage) {
+        this.name = name;
+        this.price = price;
+        this.productionId = productionId;
+        this.flowerImage = flowerImage;
+    }
+
+    public String getRealName() {
+        return realName;
+    }
+
+    public void setRealName(String realName) {
+        this.realName = realName;
+    }
+
+    public String getFlowerImage() {
+        return flowerImage;
+    }
+
+    public void setFlowerImage(String flowerImage) {
+        this.flowerImage = flowerImage;
     }
 
     public int getId() {
@@ -79,6 +114,8 @@ public class Flower {
                 ", price=" + price +
                 ", productionId=" + productionId +
                 ", production=" + production +
+                ", flowerImage='" + flowerImage + '\'' +
+                ", realName='" + realName + '\'' +
                 '}';
     }
 }

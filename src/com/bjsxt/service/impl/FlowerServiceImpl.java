@@ -47,4 +47,10 @@ public class FlowerServiceImpl implements FlowerService {
         List<Flower>list=flowerMapper.findByCon(map);
         return list;
     }
+
+    @Override
+    public List<Flower> findImageById(int id) {
+        List<Flower>list=flowerMapper.findImageById(id);
+        return list;
+    }
 }
