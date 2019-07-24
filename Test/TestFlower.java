@@ -45,6 +45,8 @@ public class TestFlower {
     }
     @Test
     public void testFindByCon(){
+
+        //哈哈
         FlowerMapper flowerMapper=sqlSession.getMapper(FlowerMapper.class);
         Map<String,Object>map=new HashMap<>();
        // map.put("name","矮");
